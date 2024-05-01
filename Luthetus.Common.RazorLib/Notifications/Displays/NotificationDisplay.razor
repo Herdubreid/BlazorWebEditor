@@ -1,0 +1,26 @@
+<div class="luth_notification @(Notification.NotificationCssClass ?? string.Empty)"
+     style="@CssStyleString">
+    <div class="luth_notification-toolbar">
+        <div class="luth_notification-title luth_unselectable"
+             style="@NotificationTitleCssStyleString"
+             title="@Notification.Title">
+            @Notification.Title
+        </div>
+
+        <div class="luth_notification-control-buttons">
+            <button class="luth_button luth_notification-button-entry" @onclick="ChangeNotificationToDialog">
+                <IconEmptyWindow/>
+            </button>
+            <button class="luth_button luth_notification-button-entry" @onclick="HandleShouldNoLongerRender">
+                <IconClose/>
+            </button>
+        </div>
+    </div>
+
+    <div class="luth_notification-body">
+        <CascadingValue Value="Notification">
+            <DynamicComponent Type="Notification.ComponentType"
+                              Parameters="Notification.ComponentParameterMap"/>
+        </CascadingValue>
+    </div>
+</div>

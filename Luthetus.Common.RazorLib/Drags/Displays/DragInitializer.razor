@@ -1,0 +1,34 @@
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<div class="luth_drag-initializer"
+     style="@StyleCss"
+     @onmousemove="DispatchSetDragStateActionOnMouseMoveAsync"
+     @onmouseup="DispatchSetDragStateActionOnMouseUp">
+    
+	@{
+		var dragState = DragStateWrap.Value;
+		var draggableViewModel = dragState.Drag;
+	}
+
+	@if (draggableViewModel is not null)
+	{
+		var dropzoneViewModelList = draggableViewModel.DropzoneList;
+
+		if (draggableViewModel.DragComponentType is not null)
+		{
+			<div style="draggableViewModel.ElementDimensions.StyleString">
+				<DynamicComponent Type="draggableViewModel.DragComponentType"
+								  Parameters="draggableViewModel.DragComponentParameterMap" />
+			</div>
+		}
+
+		foreach (var dropzone in dropzoneViewModelList)
+		{
+			<div style="z-index: @dropzone.MeasuredHtmlElementDimensions.ZIndex; @dropzone.ElementDimensions.StyleString"
+				 class="luth_dropzone @GetIsActiveCssClass(dropzone) @dropzone.CssClass"
+				 @onmouseover="() => _onMouseOverDropzone = dropzone"
+				 @onmouseover:stopPropagation="true">
+			</div>
+		}
+	}
+</div>

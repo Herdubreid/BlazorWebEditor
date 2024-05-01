@@ -1,0 +1,12 @@
+@using Luthetus.TextEditor.RazorLib.TextEditors.Displays
+
+<div class="luth_te_text-editor-input-cursor-size @TextEditorService.ThemeCssClassString @TopLevelDivElementCssClassString">
+    <span class="@LabelElementCssClassString">
+        Preview Settings:&nbsp;
+    </span>
+    
+    <div class="@PreviewElementCssClassString">
+        <TextEditorViewModelDisplay TextEditorViewModelKey="SettingsPreviewTextEditorViewModelKey"
+                                    ViewModelDisplayOptions="_viewModelDisplayOptions" />
+    </div>
+</div>

@@ -1,0 +1,9 @@
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@{ var dialogList = DialogStateWrap.Value.DialogList; }
+
+@foreach (var dialog in dialogList)
+{
+    <DialogDisplay @key="dialog.DynamicViewModelKey" 
+                   Dialog="dialog" />
+}

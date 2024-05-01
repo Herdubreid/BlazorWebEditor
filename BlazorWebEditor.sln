@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34818.151
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestServer", "TestServer\TestServer.csproj", "{835406D6-FF10-4D3E-B926-793D0224CED0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Luthetus.Common.RazorLib", "Luthetus.Common.RazorLib\Luthetus.Common.RazorLib.csproj", "{68EE1BED-D52C-4FD6-B01A-C36EFF6EE302}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Luthetus.CompilerServices.Lang.JavaScript", "Luthetus.CompilerServices.Lang.JavaScript\Luthetus.CompilerServices.Lang.JavaScript.csproj", "{C6B59B7B-50F5-4963-9887-3097D0F34602}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Luthetus.TextEditor.RazorLib", "Luthetus.TextEditor.RazorLib\Luthetus.TextEditor.RazorLib.csproj", "{DAC4ABA6-018F-4D20-A8C9-77CA85F66D57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{835406D6-FF10-4D3E-B926-793D0224CED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{835406D6-FF10-4D3E-B926-793D0224CED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{835406D6-FF10-4D3E-B926-793D0224CED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{835406D6-FF10-4D3E-B926-793D0224CED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68EE1BED-D52C-4FD6-B01A-C36EFF6EE302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68EE1BED-D52C-4FD6-B01A-C36EFF6EE302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68EE1BED-D52C-4FD6-B01A-C36EFF6EE302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68EE1BED-D52C-4FD6-B01A-C36EFF6EE302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B59B7B-50F5-4963-9887-3097D0F34602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B59B7B-50F5-4963-9887-3097D0F34602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B59B7B-50F5-4963-9887-3097D0F34602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B59B7B-50F5-4963-9887-3097D0F34602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC4ABA6-018F-4D20-A8C9-77CA85F66D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC4ABA6-018F-4D20-A8C9-77CA85F66D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC4ABA6-018F-4D20-A8C9-77CA85F66D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC4ABA6-018F-4D20-A8C9-77CA85F66D57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B11A4B5A-5B12-476A-9C66-CADCA612D978}
+	EndGlobalSection
+EndGlobal

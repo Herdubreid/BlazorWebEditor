@@ -1,0 +1,43 @@
+@using Luthetus.Common.RazorLib.Tabs.Displays
+@using Luthetus.TextEditor.RazorLib.TextEditors.Displays
+
+<div class="luth_te_text-editor-group @CssClassString"
+     style="@CssStyleString"
+	 id="@HtmlId">
+
+    @{
+        var textEditorGroup = TextEditorGroupStateWrap.Value.GroupList.FirstOrDefault(
+            x => x.GroupKey == TextEditorGroupKey);
+    }
+    
+    @if (textEditorGroup is not null)
+    {
+        <div class="luth_te_text-editor-group-tabs-list">
+			
+			<TabListDisplay @ref="_tabListDisplay"
+							TabList="@GetTabList(textEditorGroup)"/>
+        </div>
+        <div class="luth_te_text-editor-group-active-view-model">
+            @{
+                var textEditorModel = TextEditorService.ViewModelApi.GetModelOrDefault(
+                    textEditorGroup.ActiveViewModelKey);
+        
+                if (textEditorModel is null)
+                {
+                    <text>No editors are open currently</text>
+                }
+                else
+                {
+                    <TextEditorViewModelDisplay TextEditorViewModelKey="textEditorGroup.ActiveViewModelKey"
+                                                ViewModelDisplayOptions="ViewModelDisplayOptions"/>
+                }
+            }
+        </div>
+    }
+    else
+    {
+        <div>
+            Group not found
+        </div>
+    }
+</div>

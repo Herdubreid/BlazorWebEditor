@@ -1,0 +1,45 @@
+﻿<div class="luth_reflective-constructor @IsActiveCssClass">
+
+    @if (IsChosenConstructor)
+    {
+        <button class="luth_button"
+                @onclick="InvokeOnUnsetChosenConstructorInfo">
+            <IconClose/>
+        </button>
+    }
+    else
+    {
+        <button class="luth_button"
+                @onclick="InvokeOnClick">
+            <IconCSharpProject/>
+        </button>
+    }
+
+    <span class="luth_te_keyword">
+        new
+    </span>
+    
+    <span class="luth_reflective-argument-list">
+        (
+
+        @{ var parameterInfoList = ConstructorInfo.GetParameters(); }
+
+        @for (var i = 0; i < parameterInfoList.Length; i++)
+        {
+            var index = i;
+            var parameter = parameterInfoList[index];
+
+            <ReflectiveVariable VariableType="parameter.ParameterType"
+                                     VariableName="@parameter.Name"
+                                     ParametersKey="@(ParametersKey + '.' + parameter.Name)"
+                                     IsProperty="false" />
+
+            @if (i != parameterInfoList.Length - 1)
+            {
+                @: ,&nbsp;
+            }
+        }
+
+        )
+    </span>
+</div>
