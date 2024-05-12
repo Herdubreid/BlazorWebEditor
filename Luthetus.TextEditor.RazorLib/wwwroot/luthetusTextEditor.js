@@ -10,6 +10,7 @@ window.luthetusTextEditor = {
     },
     scrollElementIntoView: function (elementId, bodyElementId, gutterElementId) {
 
+        console.log(`scrollIntoView ${elementId}-${bodyElementId}-${gutterElementId}`)
         let element = document.getElementById(elementId);
 
         if (!element) {
@@ -23,7 +24,6 @@ window.luthetusTextEditor = {
             });
             let body = document.getElementById(bodyElementId);
             let gutter = document.getElementById(gutterElementId);
-            console.log(`ScrolIntoView ${body.scrollTop}`);
             gutter.scrollTop = body.scrollTop;
         }
     },
@@ -275,7 +275,6 @@ window.luthetusTextEditor = {
             return;
         }
 
-        console.log("Scrolling");
         // Remove focus from any focused element
         if (document.activeElement) {
             document.activeElement.blur();
@@ -303,8 +302,6 @@ window.luthetusTextEditor = {
     setScrollPosition: function (textEditorBodyId, gutterElementId, scrollLeft, scrollTop) {
         let textEditorBody = document.getElementById(textEditorBodyId);
         let textEditorGutter = document.getElementById(gutterElementId);
-
-        console.log(`SetScrollPosition ${scrollLeft}, ${scrollTop}`);
 
         if (!textEditorBody) {
             return;
@@ -479,7 +476,6 @@ window.luthetusTextEditor = {
                 return;
             }
 
-            console.log("Reveal Cursor");
             cursorElement.scrollIntoView({
                 block: "nearest",
                 inline: "nearest"
